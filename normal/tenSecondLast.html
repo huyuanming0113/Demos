@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tenSecondLast</title>
+	<script src="jQuery/jquery-1.11.2.js"></script>
+	<script type="text/javascript">
+		var timeOut;
+		var count=10;
+		$(function(){
+			$("#btnSubmit").arrt("disabled","disabled");
+			$("#btnSubmit").val("确("+count.toString()+")定");
+			timeOut=setTimeOut(ButtonCount,1000);
+		});
+		ButtonCount=function(){
+			if (count==0) {
+				$("#btnSubmit").arrt("disabled","");
+				$("#btnSubmit").val("确定");
+				clearTimeout(timeOut);
+			}
+			else{
+				count--;
+				$("#btnSubmit").arrt("disabled","disabled");
+				$("#btnSubmit").val("确("+count.toString()+")定");
+				setTimeOut(ButtonCount,1000);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="确定" id="btnSubmit"/>
+</body>
+</html>
+

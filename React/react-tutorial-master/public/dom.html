@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dom</title>
+    <script src="scripts/react.js"></script>
+    <script src="scripts/react-dom.js"></script>
+    <script src="scripts/browser.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/marked/0.3.5/marked.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var AC = React.createClass({  
+            render: function() {  
+                return (  
+                    <input type="text" name={this.props.name} />  
+                );  
+            },  
+            onSelect: function(s) {  
+                this.props.onSelect(s);  
+            },  
+            componentDidMount: function() {  
+                var input = this.getDOMNode();//拿到了原生DOM  
+                $(input).autocomplete({  
+                    lookup: ["北京", "上海", "杭州"],  
+                    onSelect: this.onSelect  
+                });  
+            }  
+        });  
+        var City = React.createClass({  
+            render: function() {  
+                return (  
+                    <AC name='city' onSelect={this.onSelect}></AC>   
+                );  
+            },  
+            onSelect: function(s) {  
+                console.log("you have select: "+s.value);  
+            } 
+        });  
+        React.render(
+            <City/>, 
+            document.getElementById('example')
+        );
+    </script>
+  </body>
+</html>

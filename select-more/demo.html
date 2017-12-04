@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>select-more</title>
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/multiple-select.css" />
+        <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/multiple-select.js"></script>
+    </head>
+    <body>
+        <div class="form-group">
+            <label>Month</label>
+            <select id="ms" multiple="multipled">
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+        </div>
+        <script type="text/javascript">
+            $(function() {
+                $('#ms').change(function() {
+                    //输出值$(this).val()，value数组
+                    //全选：["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                    console.log($(this).val())
+                }).multipleSelect({
+                    width: '100%'
+                });
+            });
+        </script>
+    </body>
+</html>

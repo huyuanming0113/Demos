@@ -1,0 +1,5 @@
+http.get({ host:'www.bbc.co.uk' },function(res){
+	console.log('Got a response from bbc.co.uk')
+}).on('error',function(e){
+	console.log('There was an error from bbc.co.uk')
+})

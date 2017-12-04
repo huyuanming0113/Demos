@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSSTransitionGroup</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <script src="scripts/react.js"></script>
+    <script src="scripts/react-dom.js"></script>
+    <script src="scripts/browser.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/react-with-addons.min.js"></script>
+    <script src="https://cdn.bootcss.com/marked/0.3.5/marked.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+        var Students = React.createClass({
+            getInitialState: function() {
+                return {
+                    students: ['amy', 'bob', 'tom', 'lucy']
+                };
+            },
+            componentDidMount: function() {
+                var self = this;
+                var update = function() {
+                    self.setState({
+                        students: self.state.students.concat(["unamed-"+parseInt(Math.random()*10000000)])
+                    });
+                }
+                setInterval(update, 1000);
+            },
+            handleRemove: function(e) {
+                var name = $(e.target).data("name");
+                var index = 0;
+                var students = this.state.students;
+                for(var i=0;i<students.length;i++) {
+                    if(students[i] == name) index = i;
+                }
+                var state = this.state.students.splice(index, 1);
+                this.setState({
+                    state: state
+                });
+            },
+            render: function() {
+                var s = this.state.students;
+                var self = this;
+                return (
+                    <div>
+                        <ReactCSSTransitionGroup transitionName="student">
+                            {
+                                s.map(function(d, i) {
+                                    return 
+                                        <div className='student' key={d}>
+                                            {d}
+                                            <a onClick={self.handleRemove} data-name={d}>删除</a>
+                                        </div>
+                                })
+                            }
+                        </ReactCSSTransitionGroup>
+                    </div>
+                );
+            }
+        });
+
+        React.render(
+            <Students />,
+            document.getElementById("example")
+        );
+    </script>
+  </body>
+</html>

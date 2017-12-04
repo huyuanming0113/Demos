@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>fatherson</title>
+    <script src="scripts/react.js"></script>
+    <script src="scripts/react-dom.js"></script>
+    <script src="scripts/browser.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/marked/0.3.5/marked.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+       var Team = React.createClass({
+            getInitialState: function() {  
+                return {  
+                    name: "Lucy"  
+                }  
+            },  
+            onHungry: function(name) {  
+                alert(name + " is hungry");  
+            },  
+            render: function() {  
+                return  <div onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>Team onwer is: <People {...this.state} onHungry={this.onHungry}></People></div>;  
+            },  
+            onMouseOver: function() {  
+                this.setState({  
+                    name: "mouseOver"  
+                });  
+            },  
+            onMouseOut: function() {  
+                this.setState({  
+                    name: "mouseOut"  
+                });
+            }
+        });  
+        var People = React.createClass({  
+            render: function() {  
+                return <span onClick={this.handleClick}>{this.props.name}</span>;  
+            },  
+            handleClick: function() {  
+                this.props.onHungry(this.props.name);  
+            }  
+        });  
+          
+        var team = React.render(  
+            <Team name='Lucy' />,  
+            document.getElementById('example')  
+        );
+    </script>
+  </body>
+</html>

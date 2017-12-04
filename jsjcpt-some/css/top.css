@@ -1,0 +1,312 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {
+	margin: 0 auto;
+	font-family: Microsoft Yahei, Arial, '黑体', '宋体';
+	min-width: 800px;
+}
+#top {
+	width: 100%;
+	height: auto;
+	background: url(../images/bg_top.png) repeat-x;
+	margin: 0 auto;
+}
+#top #top_logo_menu {
+	position: relative;
+	height: 64px;
+}
+#top #top_logo_menu #top_logo {
+	float: left;
+	position: relative;
+	height: 64px;
+	margin-left: 20px;
+	line-height: 64px;
+	padding: 0 auto;
+	max-width: 32%;
+	overflow: hidden;
+}
+#top #top_logo_menu #top_logo:after {
+	content: '';
+	vertical-align: middle;
+}
+#top #top_logo_menu #top_logo img {
+	vertical-align: middle;
+}
+#top #top_logo_menu #top_menu {
+	float: right;
+	position: relative;
+	height: 64px;
+	margin-right: 20px;
+	max-width: 68%;
+	overflow: hidden;
+}
+#top #top_logo_menu #top_menu .top_menu_inline {
+	margin-top: 14px;
+	font-size: 12px;
+	color: #ffffff;
+	text-align: right;
+	height: 17px;
+}
+#top #top_logo_menu #top_menu .top_menu_inline span.link {
+	padding: 0 5px;
+	cursor: pointer;
+}
+#top #top_logo_menu #top_menu .top_menu_inline span.msg_0:before {
+	content: url(../images/msg_0.png);
+}
+#top #top_logo_menu #top_menu .top_menu_inline span.msg_1:before {
+	content: url(../images/msg_1.png) ;
+}
+#top #top_logo_menu #top_menu .top_menu_inline span.sound_0:after {
+	content: url(../images/sound_0.png);
+}
+#top #top_logo_menu #top_menu .top_menu_inline span.sound_1:after {
+	content: url(../images/sound_1.png);
+}
+#top #top_logo_menu #top_navbar {
+	position: relative;
+	width: 100%;
+	min-width: 800px;
+	margin-top: 10px;
+}
+div#menu {
+    width:100%;
+	background: #6f8fcd;
+}
+
+div#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+}
+div#menu ul.menu {
+	background: #6f8fcd;
+	width: 100%;
+}
+
+div#menu li {
+    position: relative;
+    margin: 0;
+    padding: 0 0px 0 0;
+    display: block;
+    float: left;
+    width: auto;
+}
+div#menu ul ul li {
+    z-index: 11;
+}
+div#menu li div {
+    list-style: none;
+    float: left;
+    position: absolute;
+    z-index: 11;
+    top: 52px;
+    left: 0;
+    visibility: visible;
+    width: 160px;
+	margin: -16px 0 0 -4px;
+    padding: 0; 
+	border: solid 1px #6a8bcb;
+	border-radius: 4px;
+}
+div#menu li div.arrow_top:before {
+	content:url(../images/arrow_top.png);
+	position: absolute;
+	left: 36px;
+	top:-16px;
+}
+div#menu li div.arrow_top_2 {
+	left: -72px;
+}
+div#menu li div.arrow_top_2:before {
+	content:url(../images/arrow_top.png) !important;
+	position: absolute;
+	left: 128px !important;
+	top:-16px;
+}
+div#menu ul ul {
+	z-index: 11;
+    padding: 0px 4px 10px 4px;    
+    margin: 10px 0 0 0;    
+}
+
+div#menu a {
+    position: relative;
+    z-index: 10;
+    height: 36px;
+    display: block;
+    float: left;
+    line-height: 36px;
+    text-decoration: none;
+    margin-top: 1px;
+    white-space: nowrap;
+    width: auto;
+    padding-right:5px;
+    text-align:center;
+}
+div#menu span {
+    margin-top: 2px;
+    padding: 0 15px;
+    color: #fff;
+	font-weight: 100;
+	font-size: 14px;
+    background: none;
+    line-height: 36px;	
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 95% 0;
+    text-align: center;
+}
+/* menu::level1 */
+div#menu a {
+    padding: 0;
+    line-height: 50px;
+    height: 36px;
+    margin-right: 5px;
+    _margin-right: 1px;
+    background: none;
+    text-transform: uppercase;
+}
+div#menu li.last { background: none; }
+
+/* menu::level2 */
+div#menu ul ul li {
+    background: none;
+    padding: 0;
+}
+div#menu ul ul a {
+    padding: 0px;
+    height: auto;
+    float: none;
+    display: block;
+    line-height: 25px;
+    color: #fff;
+    z-index: 11;
+    padding-left: 5px;
+    white-space: normal;
+    width: 140px;
+    margin: 0 8px;
+    text-transform: none;
+}
+div#menu ul ul a.nav_sec span:after {
+	content: url(../images/arrow_right.png);
+	position: absolute;
+	right: 10px;
+	opacity: 0.5;
+}
+div#menu ul ul ul li.nav_inline {
+	display: inline-block;
+	width: auto;
+}
+div#menu ul ul a span {
+	padding: 0 5px;
+    line-height: 25px;
+    font-size: 12px;
+	color: #6a8bcb;
+}
+div#menu ul ul ul a {
+	width: auto;
+	display: inline-block;
+	float: left;
+}
+div#menu ul ul ul a span {
+	padding: 0 5px;
+    line-height: 25px;
+    font-size: 12px;
+	color: #6a8bcb;
+}
+div#menu li.current ul a,
+div#menu li.current ul a span {
+    background:none;
+	color: #6a8bcb;
+}
+
+div#menu ul ul a.parent span {
+  background:none; 
+  color: #6a8bcb;
+}
+
+div#menu ul ul span {
+    margin-top: 0;
+    text-align: left;
+}
+div#menu ul ul li {
+    width: 100%;
+}
+
+/* menu::level3 */
+div#menu ul ul div {
+    width: 290px;
+    padding: 0;
+    margin: -63px 0 0 156px;
+}
+div#menu ul ul div.arrow_left:before {
+	content:url(../images/arrow_left.png);
+	position: absolute;
+	left:-4px;
+	top: 8px;
+}
+div#menu ul ul div.arrow_left_2 {
+	left: -452px;
+}
+div#menu ul ul div.arrow_left_2:before {
+	content:url(../images/arrow_rig.png);
+	position: absolute;
+	left: 289px;
+	top: 8px;
+}
+div#menu ul ul ul {
+    padding: 10px 4px 0 4px;
+}
+div#menu ul ul div li {
+    position:relative;
+    top:-10px;
+	overflow: hidden;
+}
+div#menu .nav_thi {
+	height: auto !important;
+	position: relative;
+	clear: both;
+	margin-top: 6px;
+}
+div#menu .nav_thi a{
+	position: relative;
+	border-bottom: dotted 1px #6a8bcb;
+	margin-left: 12px;
+	padding-left: 0;
+}
+div#menu .nav_for {
+	position: relative;
+	border: none;
+	margin-left: 0px !important;
+	clear: both;
+	min-height: 24px;
+	line-height: 24px;
+}
+div#menu .nav_for span {
+	color: #6a8bcb;
+	font-size: 12px;
+	font-weight: 100;
+	height: 16px;
+	clear: both;
+	min-width: 60px;
+	display: inline-block;
+	margin: 0 8px;
+	padding: 0;
+}
+div#menu a.not_next span {
+	color: #909090 !important;
+}
+div#menu .arrow_top, div#menu .arrow_left {
+	background: #FFFFFF;
+}
+a {
+	text-decoration:none;
+	color: white
+}
+a:link{color:#ffffff;}   
+a:active{color:#ffffff;}   
+a:visited{color:#ffffff;}   
+a:hover{color:#ffffff;} 

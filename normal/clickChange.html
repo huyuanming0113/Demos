@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clickChange</title>
+	<style type="text/css">
+		.caneditBg{
+			background-color: Gray;
+		}
+	</style>
+	<script src="jQuery\jquery-1.11.2.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".canedit").each(function() {
+				$(this).bind("dblclick",function() {
+					var html=$(this).html();
+					var textarea="<textarea name='temTextarea' id='temTextarea' onblur='saveText(this)'>"+html+"</textarea>";
+					$(this).empty().html(textarea);
+				});
+			$(this).mouseenter(function() {
+				$(this).addClass('caneditBg')}).mouseleave(function() {
+					$(this).removeClass('caneditBg')
+				});
+			});
+		});
+		saveText=function(o){
+			var text=$(o).val();
+			$(o).parent().empty().html(text);
+		}
+	</script>
+</head>
+<body>
+	<div class="canedit">
+		即点即改！
+	</div>
+	<div>
+	</div>
+</body>
+</html>

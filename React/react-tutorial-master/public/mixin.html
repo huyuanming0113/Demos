@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mixin</title>
+    <script src="scripts/react.js"></script>
+    <script src="scripts/react-dom.js"></script>
+    <script src="scripts/browser.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/marked/0.3.5/marked.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var TimerMixin = function() {  
+            return {  
+                componentDidMount: function() {  
+                    this._interval = setInterval(this._onTick, 1000);
+                },  
+                format: function(d) {  
+                    return d >= 10 ? d : ("0"+d);  
+                },  
+                _onTick: function() {  
+                    var d = new Date();  
+                    this.timerTick(this.format(d.getHours()) + ":" + this.format(d.getMinutes()) + ":" + this.format(d.getSeconds()));  
+                },  
+                componentWillUnmount: function() {  
+                    clearInterval(this._interval);  
+                }  
+            }  
+        }  
+        var Card = React.createClass({  
+            mixins: [TimerMixin()],  
+            timerTick: function(t) {  
+                this.setState({  
+                    time: t  
+                });  
+            },  
+            getInitialState: function() {  
+                return {  
+                    time: 'loading time'  
+                }  
+            },  
+            render: function() {  
+                return (  
+                    <div>Hello {this.props.name}! It is {this.state.time} !</div>  
+                );  
+            }  
+        }); 
+        React.render(
+            <Card/>, 
+            document.getElementById('example')
+        );
+    </script>
+  </body>
+</html>

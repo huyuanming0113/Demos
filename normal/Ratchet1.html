@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ratchet template page</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="../ratchet\css\ratchet.css" rel="stylesheet">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="../ratchet\js\ratchet.js"></script>
+  </head>
+  <body>
+
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <a href="#popover">
+        <h1 class="title">
+          Ratchet1
+          <span class="icon icon-caret"></span>
+        </h1>
+      </a>
+    </header>
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+     
+    <div class="content">
+      <div id="popover" class="popover">
+        <header class="bar bar-nav">
+          <h1 class="title">Popover title</h1>
+        </header>
+        <ul class="table-view">
+          <li class="table-view-cell">Item1</li>
+          <li class="table-view-cell">Item2</li>
+          <li class="table-view-cell">Item3</li>
+          <li class="table-view-cell">Item4</li>
+          <li class="table-view-cell">Item5</li>
+          <li class="table-view-cell">Item6</li>
+          <li class="table-view-cell">Item7</li>
+          <li class="table-view-cell">Item8</li>
+        </ul>
+      </div>
+       <ul class="table-view">
+        <li class="table-view-cell">
+          Item 1
+          <div class="toggle">
+            <div class="toggle-handle"></div>
+          </div>
+        </li>
+        <li class="table-view-cell">
+          <a class="navigate-right">
+            Item 2
+          </a>
+        </li>
+        <li class="table-view-cell">
+          <a class="navigate-right">
+            Item 3
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
